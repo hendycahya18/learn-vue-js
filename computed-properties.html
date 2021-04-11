@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed Properties</title>
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" v-model:value="nama">
+        <input type="text" v-model:value="umur">
+       {{ biodata }}
+    </div>
+
+
+
+    <script src="javascript/vue.js"></script>
+    <script>
+        var vo = new Vue({
+            el: '#app',
+            data: {
+                nama :'Hendy',
+                umur : 0
+            },
+            computed: {
+                biodata:{
+                    get: function(){
+                        return this.nama + " umurnya " + this.umur;
+                    },
+                    set: function(params){
+                        var cridential = params.split(' ')
+                        this.nama = cridential[0]
+                        this.umur = cridential[1]
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
