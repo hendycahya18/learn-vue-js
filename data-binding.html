@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Instance & Property</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model:value="nama">
+        <input type="text" v-model:value="umur">
+        <!-- tanda bintang menandakan bahwa variabel tersebut permanen -->
+        <br>
+        {{ laki ? 'dia adalah laki' : 'dia adalah perempuan'}}
+        <br>
+        {{nama + " " + "-" + " " + umur}}
+        <br>
+        <span v-once>{{nama}}</span> - {{ umur }}
+        <div v-html="raw"></div>
+    </div>
+    <script src="javascript/vue.js"></script>
+    <script>
+        var vo = new Vue({
+            // key: value   
+            el: '#app',
+            data:{
+                nama: "Hilman",
+                umur: 19,
+                raw:'<p> <b> mantap jiwa! </b></p>',
+                laki: true
+            }
+        });
+    </script>
+</body>
+</html>
