@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aplikasi Vue #5: Direktif untuk data Binding</title>
+  <style>
+    .preview {
+      padding: 10px;
+      background-color: azure;
+    }
+  </style>
+  <!-- Menyisipkan Vuejs dari CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+
+  <!-- elemen kontainer untuk aplikasi -->
+  <div id="app">
+    <fieldset>
+      <legend>Buat Artikel</legend>
+      <p><input type="text" v-model:value="title" placeholder="judul artikel" /></p>
+      <p><textarea v-model:value="content"></textarea></p>
+    </fieldset>
+
+    <div class="preview">
+      <h1 v-text="title"></h1>
+      <hr>
+      <div v-html="content"></div>
+      <hr>
+      <p>Konten dalam plain text:</p>
+      <div v-text="content"></div>
+      <hr>
+      <p>Yang ini cuma di-render sekali:</p>
+      <div v-once>{{ content }}</div>
+      </p>
+    </div>
+
+    <!-- aplikasi Vue Hello -->
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          title: "Tutorial Vuejs untuk Pemula",
+          content: "<pre>Ini adalah tutorial Vuejs dari nol</pre>"
+        }
+      })
+    </script>
+</body>
+
+</html>
