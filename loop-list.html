@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop List</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="member in members">
+                {{ member.nama + " - " + member.umur}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(keys, member) in personels">
+                {{ keys }} - {{ member }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="javascript/vue.js"></script>
+    <script src="javascript/loop-list.js"></script>
+</body>
+</html>
