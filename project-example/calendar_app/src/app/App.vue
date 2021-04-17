@@ -8,11 +8,13 @@
 <script>
 import CalendarWeek from './components/CalendarWeek.vue'
 import CalendarEntry from './components/CalendarEntry.vue'
+
+
 export default {
   name: 'App',
   components: { 
     CalendarWeek,
-    CalendarEntry 
+    CalendarEntry,
   },
 }
 </script>

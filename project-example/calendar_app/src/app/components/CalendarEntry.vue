@@ -1,16 +1,41 @@
 <template>
     <div id="calendar-entry">
         <div class="calendar-entry-note">
-        <input type="text" placeholder="New Event" />
-        <p class="calendar-entry-day">Day of event: <span class="bold">Monday</span></p>
-        <a class="button is-primary is-small is-outlined">Submit</a>
+        <input type="text" placeholder="New Event" v-model="inputEntry" @keyup.enter="submitEvent(inputEntry)" required/>
+        <p style="color: red; font-size: 13px" v-if="error">
+          You have to type something first!
+        </p>
+        <p class="calendar-entry-day">Day of event: <span class="bold">{{ titleOfActiveDay }}</span></p>
+        <a class="button is-primary is-small is-outlined" @click="submitEvent(inputEntry)">Submit</a>
         </div>
     </div>
 </template>
 
 <script>
+import { store } from "../store.js";
+
 export default {
-    
+    name: 'CalendarEntry',
+    data() {
+      return {
+        inputEntry: "",
+        error: false,
+      }
+    },
+    computed: {
+      titleOfActiveDay() {
+        return store.getActiveDay().fullTitle;
+      }
+    },
+    methods: {
+      submitEvent(eventDetails) {
+        if (eventDetails === '') return this.error = true;
+
+        store.submitEvent(eventDetails);
+        this.inputEntry="";
+        this.error= false;
+      }
+    },
 }
 </script>
 
@@ -31,7 +56,7 @@ export default {
       border-bottom: 1px solid #CCC;
       font-size: 15px;
       height: 30px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
 
       &:focus {
         outline: none;
@@ -52,6 +77,9 @@ export default {
     .submit {
       display: block;
       margin: 0 auto;
+    }
+    p {
+      margin-bottom: 10px;
     }
   }
 }
