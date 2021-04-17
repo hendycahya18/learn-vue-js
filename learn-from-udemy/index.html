@@ -6,9 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Learn Vue.js</title>
 </head>
 <body>
-    
-</body>~
+    <div id="app" class="container py-5">
+        <h1>{{ message }}</h1>
+        <img class="strongCenter" :src="loadingImage" width="200" alt="">
+        <div class="alert alert-danger" role="alert" v-if="files.length<1">
+            You have no any files
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" :value="selectedFile" readonly placeholder="No Selected Files">
+            <input type="file" style="display: none;" ref="file" @change="handleChange">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" @click="cancelUpload" v-if="(selectedFile && uploading) || uploading">Cancel</button>
+                <button class="btn btn-outline-secondary" @click="handleUpload" :title="uploadMessage" v-show="!uploading">Upload</button>
+                <button class="btn btn-outline-secondary" @click="browseFile" v-show="!uploading">Select File</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./main.js"></script>
+</body>
 </html>
