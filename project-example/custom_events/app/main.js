@@ -32,8 +32,12 @@ const app = {
   },
   methods: {
     addNote(event) {
-      this.notes.push(event.note);
-      this.timestamps.push(event.timestamp);
+      if(event.note==""){
+        return false
+      }else{
+        this.notes.push(event.note);
+        this.timestamps.push(event.timestamp);
+      }
     }
   },
   components: {
