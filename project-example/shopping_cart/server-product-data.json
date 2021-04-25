@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "title": "The Fullstack Hoodie",
-        "description": "Lightweight, breathable hoodie with the Fullstack Crest. Guaranteed to keep you looking fresh while warm.",
-        "price": 19.99
+        "title": "Kimia Organik: H NMR dan C NMR",
+        "description": "Belajar bagaimana cara menentukan struktur senyawa organik jika diberikan sebuah spektrum H NMR dan C NMR",
+        "price": "40.000"
     },
     {
         "id": 2,
-        "title": "The Fullstack Tee",
-        "description": "The original Fullstack clothing item. Always prepared to keep your style in check.",
-        "price": 15.99
+        "title": "Kimia Analitik: Titrasi",
+        "description": "Belajar mengenai dasar-dasar titrasi, bahan baku titrasi, jenis-jenis titrasi, dan lain-lain",
+        "price": "30.000"
     },
     {
         "id": 3,
-        "title": "The Fullstack Fitted Cap",
-        "description": "Stay comfortable and cool with the first Fullstack Fitted Cap, featuring a normal bill and medium crown.",
-        "price": 15.99
+        "title": "Kimia Organik: Amina",
+        "description": "Belajar gugus fungsi amina dimulai dari definisi, sifat-sifatnya, reaksi kimia, serta pembuatan senyawa jenis amina",
+        "price": "45.000"
     },
     {
         "id": 4,
-        "title": "The Fullstack Jacket",
-        "description": "Keep warm and protected with the rugged, durable Fullstack lightweight jacket.",
-        "price": 49.99
+        "title": "Kimia Dasar: Stoikiometri",
+        "description": "Stoikiometri merupakan materi dasar dalam ilmu kimia. Di kelas ini kita akan mempelajari bagaimana pemahaman dasar tentang ilmu stoikiometri",
+        "price": "50.000"
     }
 ]

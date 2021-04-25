@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "title": "The Fullstack Hoodie",
+        "title": "Kimia Organik: H NMR dan C NMR",
         "description": "Lightweight, breathable hoodie with the Fullstack Crest. Guaranteed to keep you looking fresh while warm.",
-        "price": 19.99,
+        "price": "40.000",
         "quantity": 2
     }
 ]
